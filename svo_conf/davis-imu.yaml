@@ -1,0 +1,50 @@
+cameras:
+- camera:
+    distortion:
+      parameters:
+        cols: 1
+        rows: 4
+        data: [-0.03252275347038443, 0.0010042799356776398, -0.0048537750326187136,
+          0.0014604134198771906]
+      type: equidistant
+    image_height: 260
+    image_width: 346
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [173.07989681517137, 173.0734479068749, 163.31033691005516, 134.99889292308214]
+    label: cam0
+    line-delay-nanoseconds: 0
+    type: pinhole
+  T_B_C:
+    cols: 4
+    rows: 4
+    data: [0.9999641031275885, -0.0032163089452889406, 0.007838865543278489, -0.0010989660581693704,
+      0.0031978814153898138, 0.9999920967707332, 0.002362191890020722, 0.0026136576112316193,
+      -0.007846401129833275, -0.0023370393322812446, 0.9999664855566254, 0.022234719732535473,
+      0.0, 0.0, 0.0, 1.0]
+  serial_no: 0
+  calib_date: 0
+  description: /davis/image_raw
+label: /home/tof/camchain-imu.yaml
+
+imu_params:
+  delay_imu_cam: 0.0
+  max_imu_delta_t: 0.01
+  acc_max: 176.0
+  omega_max: 7.8
+  sigma_omega_c: 0.05
+  sigma_acc_c: 0.1
+  sigma_omega_bias_c: 4.0e-05
+  sigma_acc_bias_c: 0.002
+  sigma_integration: 0.0
+  g: 9.8082
+  imu_rate: 1000.0
+
+imu_initialization:
+  velocity: [0.0, 0.0, 0.0]
+  omega_bias: [0.0, 0.0, 0.0]
+  acc_bias: [0.0, 0.0, 0.0]
+  velocity_sigma: 1.0
+  omega_bias_sigma: 0.05
+  acc_bias_sigma: 0.1
