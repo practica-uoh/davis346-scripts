@@ -92,19 +92,14 @@ def replacement(replace_string):
 if __name__ == "__main__":
 
   '''
-     CALL : python3 change_camera_info.py --inbag in.bag --outbag out.bag --replacement /stereo_down/left/camera_info=left.yaml
-  
-     troubleshooting:
-	- pip3 install rospkg
-	- pip3 install pycryptodomex 
-	- pip3 install gnupg
+     CALL : python add_camera_info_from_kalibr.py --inbag in.bag --outbag out.bag --replacement /dvs/image_raw=calib_from_kalibr.yaml
 
   '''
-  rospy.init_node('change_camera_info')
-  parser = argparse.ArgumentParser(description='Change camera info messages in a bagfile.')
+  rospy.init_node('add_camera_info')
+  parser = argparse.ArgumentParser(description='Add camera info messages in a bagfile.')
   parser.add_argument('--inbag', help='input bagfile')
   parser.add_argument('--outbag', help='output bagfile')
-  parser.add_argument('--replacement', type=replacement, nargs='+', help='replacement in form "TOPIC=CAMERA_INFO_FILE", e.g. /stereo/left/camera_info=my_new_info.yaml')
+  parser.add_argument('--replacement', type=replacement, nargs='+', help='replacement in form "TOPIC=CAMERA_INFO_FILE", e.g. /dvs/image_raw=calib_from_kalibr.yaml')
   args = parser.parse_args()
   replacements = {}
 
